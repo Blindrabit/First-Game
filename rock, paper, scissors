@@ -1,0 +1,21 @@
+print("You have won " + str(x))
+print("Python has won " + str(y))
+
+game = "Rock, Paper Scissors? -"
+import random
+choice = input(game) 
+comp = random.choices(["ROCK","PAPER","SCISSORS"])
+clean = str(comp)[2:-2]
+playerchoice = str(choice)
+print("Python Choose -" + clean)
+
+if choice.upper() == clean:
+    print("Draw")
+elif choice.upper() == "ROCK" and clean == "SCISSORS" or choice.upper() == "PAPER" and clean.upper() == "ROCK" or choice.upper() == "SCISSORS" and clean.upper() == "PAPER":
+    print("You Win!! :D")
+    x += 1
+elif choice.upper() not in ("ROCK","PAPER","SCISSORS"):
+    print("Invalid choice! Please choose either Rock, Paper or Scissors")
+else:
+    print("You lose! :(")
+    y += 1
